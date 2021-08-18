@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Table } from 'react-bootstrap'
 
 
 
@@ -39,6 +39,10 @@ const Main = () => {
     const [lastPage, setLastPage] = useState(0)
     const [ getting, setGetting ] = useState(true)
     const [ buttonn, setUpButton ] = useState(true)
+    const [ password, setPassword ] = useState("")
+    const [ input, setInput ] = useState("")
+    const [ popup, setPopup ] = useState(false);
+    const [ bno, setBno ] = useState(0)
     
     const getAPI = async() => {
         const {data} = await axios.get("http://3.35.235.33:8080/api/get_list")
@@ -88,6 +92,24 @@ const Main = () => {
             setLists(dd)
         }
     }
+
+    const onClick = (e) => {
+        (popup ? setPopup(false) : setPopup(true) )
+        setPassword(e.target.attributes.value.value)
+        setBno(e.target.attributes.bno.value)
+    }
+
+    const onSubmit = async(e) => {
+        console.log("submit")
+        e.preventDefault()
+        ( password === input 
+            ?  await axios({
+                method: "delete",
+                url: `http://3.35.235.33:8080/api/delete/${bno}`
+            })
+            : alert("비밀번호가 틀렸습니다.") )
+            setPopup(false)
+        }
         
     return(
         <>
@@ -119,6 +141,9 @@ const Main = () => {
                         <Td >
                             {list.modDate.substring(0,10)}
                         </Td>
+                        <td onClick={onClick} bno={list.bno} value={list.password || "1234"} >
+                            삭제
+                        </td>
                     </tr>
                     ))}
                     
@@ -127,9 +152,30 @@ const Main = () => {
             </Able>
         </Container>
             <div>
-            글쓰기
-        </div>
+                <Link to="/write" >
+                    <span>글쓰기</span>
+                </Link>
+            </div>
 
+
+        {popup 
+        ? 
+        <div>
+                <a>
+                    삭제하시려면 비밀번호를 입력하세요.
+                </a>
+            <form onSubmit={onSubmit}>
+                <input 
+                    type="password" 
+                    value={input} 
+                    onChange={ (e) => setInput(e.target.value)} 
+                    />
+                <input type="submit"  />
+            </form>
+        </div>
+        :
+        null
+        }
         
         </>
     )
