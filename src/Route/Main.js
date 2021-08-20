@@ -100,7 +100,6 @@ const Main = () => {
     }
 
     const onSubmit = async(e) => {
-        console.log("submit")
         e.preventDefault()
         ( password === input 
             ?  await axios({

@@ -62,11 +62,10 @@ const Detail = (props) => {
         } catch (error) {
         }
     
-    })
+    },[])
 
 
     
-    console.log(board)
     
     return(
         <Container>

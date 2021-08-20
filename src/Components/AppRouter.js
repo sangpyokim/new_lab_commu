@@ -6,10 +6,11 @@ import Main from '../Route/Main'
 import AIBoard from '../Route/AIBoard'
 import Write from '../Route/Write'
 import Detail from '../Route/Detail'
+import Modify from '../Route/Modify'
 
 const AppRouter = () => {
     return(
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Route>
                 <Header/>
 
@@ -18,6 +19,7 @@ const AppRouter = () => {
                     <Route exact path="/get_board/:bno" component={Detail} />
                     <Route exact path="/aiboard/:page" component={AIBoard} />
                     <Route exact path="/write" component={Write} />
+                    <Route exact path="/modify" component={Modify} />
 
                     <Redirect to="/" />
                 </Switch>
