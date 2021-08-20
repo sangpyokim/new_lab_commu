@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "https://sangpyokim.github.io/new_lab_commu/static/js/main.c02252d4.chunk.js",
+    "main.js.map": "https://sangpyokim.github.io/new_lab_commu/static/js/main.c02252d4.chunk.js.map",
+    "runtime-main.js": "https://sangpyokim.github.io/new_lab_commu/static/js/runtime-main.07af5c7f.js",
+    "runtime-main.js.map": "https://sangpyokim.github.io/new_lab_commu/static/js/runtime-main.07af5c7f.js.map",
+    "static/css/2.da1eef19.chunk.css": "https://sangpyokim.github.io/new_lab_commu/static/css/2.da1eef19.chunk.css",
+    "static/js/2.5fd92b22.chunk.js": "https://sangpyokim.github.io/new_lab_commu/static/js/2.5fd92b22.chunk.js",
+    "static/js/2.5fd92b22.chunk.js.map": "https://sangpyokim.github.io/new_lab_commu/static/js/2.5fd92b22.chunk.js.map",
+    "index.html": "https://sangpyokim.github.io/new_lab_commu/index.html",
+    "static/css/2.da1eef19.chunk.css.map": "https://sangpyokim.github.io/new_lab_commu/static/css/2.da1eef19.chunk.css.map",
+    "static/js/2.5fd92b22.chunk.js.LICENSE.txt": "https://sangpyokim.github.io/new_lab_commu/static/js/2.5fd92b22.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.07af5c7f.js",
+    "static/css/2.da1eef19.chunk.css",
+    "static/js/2.5fd92b22.chunk.js",
+    "static/js/main.c02252d4.chunk.js"
+  ]
+}
